@@ -432,6 +432,14 @@ func (v *Viper) OnConfigChange(run func(in fsnotify.Event)) {
 	v.onConfigChange = run
 }
 
+func (v *Viper) EncoderRegistry() *encoding.EncoderRegistry {
+	return v.encoderRegistry
+}
+
+func (v *Viper) DecoderRegistry() *encoding.DecoderRegistry {
+	return v.decoderRegistry
+}
+
 // WatchConfig starts watching a config file for changes.
 func WatchConfig() { v.WatchConfig() }
 
